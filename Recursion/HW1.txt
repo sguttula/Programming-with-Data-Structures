@@ -1,0 +1,25 @@
+You are given seven hexagon tiles.  Each tile has 6 colored segments. 
+
+
+
+Colored segments can be any color from the following, Red, Blue, Yellow, Green, Orange, Purple.  Colors may also repeat on the same hexagon tile.  The tiles themselves are also labeled 1 - 7. 
+
+You need to place the 7 hexagon tiles on a board such that the first hexagon is placed in the center, and the remaining 6 are placed going around the first.  The trick is that adjacent segments of the hexagons must have the same color in order for the placement to be valid.  Your program must use recursion to find a possible solution.
+
+The following presents a possible example given the 7 hexagons.
+
+
+
+The program must read in a description of seven hexagons from a text file.  Use a FileChooser the allow to user to select the input file.  Each line of the file contains the hexagon tile number, followed by the colors of each segment.  The colors are listed in clockwise order. 
+
+For example, the following would be an example of the user input for each hexagon in the above solution:
+
+1    PPBGOY
+2    GGGGGG
+3    PPPPPP
+4    ROYGBP
+5    PROYGB
+6    GOGYGB
+7    BGPPOR
+
+You must write a program which incorporates a JavaFX GUI.  The program will take an input file and find and display a possible solution to the puzzle given. The program must solve the puzzle recursively.  If a solution is found, then display the configuration of the hexagons on the GUI.  If no solution is found display a message saying that there is no solution for the given hexagon tiles.
