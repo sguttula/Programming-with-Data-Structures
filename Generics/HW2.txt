@@ -1,0 +1,86 @@
+The Shape Interface:
+NOTE: You may not add anything to this interface, it must be implemented exactly as shown.
+Shape has only one public method, getVolume(). 
+This method should return a double.
+This method will need to be implemented with the correct volume formula for each shape type.
+The Cone Class:
+NOTE: You may not change this class in any way EXCEPT for one minor thing you will need to add in order to enable Object I/O.
+Cone should implement the Shape interface.
+Member Variables:
+height: double
+radius: double
+Constructors:
+one constructor which takes values for height and radius and initializes them.
+Methods:
+toString(): returns a string which includes the type of shape, the radius, and the volume.
+The Ellipsoid Class:
+NOTE: You may not change this class in any way EXCEPT for one minor thing you will need to add in order to enable Object I/O.
+Ellipsoid should implement the Shape interface.
+Member Variables:
+radius1: double
+radius2: double
+radius3: double
+Constructors:
+one constructor which takes values for radius1, radius2 and radius3 and initializes them.
+Methods:
+toString(): returns a string which includes the type of shape, the three radii, and the volume.
+The Sphere Class:
+NOTE: You may not change this class in any way EXCEPT for one minor thing you will need to add in order to enable Object I/O.
+Sphere should implement the Shape interface.
+Member Variables:
+radius: double
+Constructors:
+one constructor which takes a value for radius1 and initializes it.
+Methods:
+toString(): returns a string which includes the type of shape, the radius, and the volume.
+The ObjectSaver Class:
+The ObjectSaver class must be implemented as a Generic Class which can work with any type of object.  The point of this class is to allow you to easily read and write objects to and from a given file.
+NOTE: You may NOT overload any of the methods in this class.  You are only allowed to write each method once, and the methods should work with any type of object.  You also may not use Object or Shape as a concrete parameter.  You must use generics to implement this class.
+Member Variables:
+file: File
+Constructors:
+one constructor which takes a File object which is the file to read/write to/from
+Methods:
+readOneObject():
+takes an integer as a parameter, this integer is the specific object in the file that you want to read.  the first object in the file is 1, the second is 2 and so on.
+reads / loads the requested object and returns this object.
+this method should also throw an IOException if the parameter is outside the range of possible object positions in the file.
+readAllObjects():
+returns an ArrayList of Generic Type which holds all the objects read from the file.
+writeOneObject():
+takes a generic class type as a parameter.
+takes a boolean value as a parameter.  if the value is true append to the end of the file, if false, overwrite the old contents of the file.
+writes the object to the File.
+this method should also throw a NotSerializableException.
+writeAllObjects():
+takes an ArrayList of any type as a parameter.
+takes a boolean value as a parameter.  if the value is true append to the end of the file, if false, overwrite the old contents of the file.
+writes all the objects in the ArrayList to the File specified in the constructor.
+this method should also throw a NotSerializableException.
+The ShapeUtilities Class
+This class has three static utility methods in it which should all be Generic Methods.
+recursiveSort(): (And I bet you thought you wouldn't have to use recursion again ^_^ )
+This method takes an ArrayList of Bounded Generic type and sorts it based on the volumes of the objects using the following algorithm.  The bound should only allow any Shape object and subclasses.  NOTE: You must follow the algorithm exactly, do not deviate.
+Algorithm:
+if the list size is <= 1
+   return the list
+select a middle element from the list and remove it
+create two lists leftList and rightList
+for each element in the list
+    if element is less than the middle element then add element to the rightList
+    else add element to leftList
+return the combination of recursiveSort(leftList), middle element, and recursiveSort(rightList)
+min():
+This method takes an ArrayList of Bounded Generic Type which only allows Shape objects and its subclasses.
+The method should return the object with the minimum volume from the list of objects.
+max():
+This method takes an ArrayList of Bounded Generic Type which only allows Shape objects and its subclasses.
+The method should return the object with the maximum volume from the list of objects.
+The Main Class
+Test all of your classes in the Main class.  You must demonstrate that everything works correctly.
+Use your ObjectSaver class to read each input file and create three ArrayLists, one per file.
+Display all of the objects in each ArrayList.
+Display the mininum and maximum objects of each ArrayList using the methods in your ShapeUtilities class.
+Sort each ArrayList using the sorting method from your ShapeUtilities class.
+Write the sorted ArrayLists to three output files using your ObjectSaver class.
+Use these output files as input files to create three new ArrayLists and then display these ArrayLists.
