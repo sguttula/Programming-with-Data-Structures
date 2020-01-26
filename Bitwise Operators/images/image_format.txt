@@ -1,0 +1,13 @@
+Image Color:
+
+Grayscale
+Negative
+Sepia
+
+PPM Image:
+
+Cat
+Dog
+Drink
+Monalisa
+Pineapple
